@@ -5,3 +5,9 @@
 
 cadena = 'Hola Mundo!'
 caracter = 'o'
+
+def buscar_en_string(cadena, caracter)
+  cadena.include?(caracter)
+end
+  
+puts buscar_en_string(cadena, caracter)

@@ -6,3 +6,40 @@
 
 a = [1, 2, 3, 9, 12, 31, 'domingo']
 b = %w[lunes martes miércoles jueves viernes sábado domingo]
+
+def concaten(arreglo1 = [], arreglo2 = [])
+  puts '******************'
+  arreglo1 + arreglo2
+end
+
+def uni(arreglo1 = [], arreglo2 = [])
+  puts '******************'
+  arreglo_out = arreglo1.clone
+  arreglo2.each do |valor|
+    arreglo_out.push(valor) if !arreglo1.include?(valor)
+  end
+  arreglo_out
+end
+
+def interseccion(arreglo1 = [], arreglo2 = [])
+  puts '******************'
+  arreglo_out = []
+  arreglo1.each do |valor|
+    puts valor if arreglo2.include?(valor)
+  end
+  arreglo_out
+end
+
+def intercalar(arreglo1 = [], arreglo2 = [])
+  puts '******************'
+  nuevo_arreglo = []
+  arreglo1.each_with_index { |valor, key|
+    nuevo_arreglo.push(valor.to_s+","+arreglo2[key].to_s)
+  }
+  nuevo_arreglo
+end
+
+puts concaten(a, b)
+puts uni(a, b)
+puts interseccion(a, b)
+puts intercalar(a, b)

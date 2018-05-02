@@ -3,11 +3,7 @@
 # y no obtener errores ni warnings.
 
 def par(x)
-  if x % 2 == 0
-    return true
-  else
-    return false
-  end
+  (x % 2).zero?
 end
 
 puts par(2)
